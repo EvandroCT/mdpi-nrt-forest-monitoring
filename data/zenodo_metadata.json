@@ -1,0 +1,348 @@
+{
+  "resource_type": {
+    "id": "dataset"
+  },
+  "title": "Enhancing Near-Real-Time Amazon Forest Monitoring Using GeoAI: A Case Study on Selective Logging — companion reproducibility data",
+  "version": "1.0.0",
+  "publication_date": null,
+  "rights": [
+    {
+      "id": "cc-by-sa-4.0"
+    }
+  ],
+  "creators": [
+    {
+      "person_or_org": {
+        "type": "personal",
+        "given_name": "Evandro",
+        "family_name": "Taquary",
+        "identifiers": [
+          {
+            "scheme": "orcid",
+            "identifier": "0009-0005-0456-3382"
+          }
+        ]
+      },
+      "affiliations": [
+        {
+          "name": "Earth Observation and Geoinformatics Division, Instituto Nacional de Pesquisas Espaciais (INPE), São José dos Campos, SP, Brazil"
+        }
+      ]
+    },
+    {
+      "person_or_org": {
+        "type": "personal",
+        "given_name": "Guilherme",
+        "family_name": "Mataveli",
+        "identifiers": [
+          {
+            "scheme": "orcid",
+            "identifier": "0000-0002-4645-0117"
+          }
+        ]
+      },
+      "affiliations": [
+        {
+          "name": "Earth Observation and Geoinformatics Division, Instituto Nacional de Pesquisas Espaciais (INPE), São José dos Campos, SP, Brazil"
+        }
+      ]
+    },
+    {
+      "person_or_org": {
+        "type": "personal",
+        "given_name": "Sérgio",
+        "family_name": "Nogueira",
+        "identifiers": [
+          {
+            "scheme": "orcid",
+            "identifier": "0000-0001-8033-3937"
+          }
+        ]
+      },
+      "affiliations": [
+        {
+          "name": "Independent Researcher, Indaiatuba, SP, Brazil"
+        }
+      ]
+    },
+    {
+      "person_or_org": {
+        "type": "personal",
+        "given_name": "Daniel",
+        "family_name": "Braga",
+        "identifiers": [
+          {
+            "scheme": "orcid",
+            "identifier": "0000-0002-5170-1902"
+          }
+        ]
+      },
+      "affiliations": [
+        {
+          "name": "Earth Observation and Geoinformatics Division, Instituto Nacional de Pesquisas Espaciais (INPE), São José dos Campos, SP, Brazil"
+        }
+      ]
+    },
+    {
+      "person_or_org": {
+        "type": "personal",
+        "given_name": "Gilberto",
+        "family_name": "Queiroz",
+        "identifiers": [
+          {
+            "scheme": "orcid",
+            "identifier": "0000-0001-7534-0219"
+          }
+        ]
+      },
+      "affiliations": [
+        {
+          "name": "Earth Observation and Geoinformatics Division, Instituto Nacional de Pesquisas Espaciais (INPE), São José dos Campos, SP, Brazil"
+        }
+      ]
+    },
+    {
+      "person_or_org": {
+        "type": "personal",
+        "given_name": "Luiz",
+        "family_name": "Aragão",
+        "identifiers": [
+          {
+            "scheme": "orcid",
+            "identifier": "0000-0002-4134-6708"
+          }
+        ]
+      },
+      "affiliations": [
+        {
+          "name": "Earth Observation and Geoinformatics Division, Instituto Nacional de Pesquisas Espaciais (INPE), São José dos Campos, SP, Brazil"
+        }
+      ]
+    }
+  ],
+  "contributors": [
+    {
+      "person_or_org": {
+        "type": "personal",
+        "given_name": "Evandro",
+        "family_name": "Taquary",
+        "identifiers": [
+          {
+            "scheme": "orcid",
+            "identifier": "0009-0005-0456-3382"
+          }
+        ]
+      },
+      "affiliations": [
+        {
+          "name": "Earth Observation and Geoinformatics Division, Instituto Nacional de Pesquisas Espaciais (INPE), São José dos Campos, SP, Brazil"
+        }
+      ],
+      "role": {
+        "id": "contactperson"
+      }
+    },
+    {
+      "person_or_org": {
+        "type": "personal",
+        "given_name": "Evandro",
+        "family_name": "Taquary",
+        "identifiers": [
+          {
+            "scheme": "orcid",
+            "identifier": "0009-0005-0456-3382"
+          }
+        ]
+      },
+      "affiliations": [
+        {
+          "name": "Earth Observation and Geoinformatics Division, Instituto Nacional de Pesquisas Espaciais (INPE), São José dos Campos, SP, Brazil"
+        }
+      ],
+      "role": {
+        "id": "datacurator"
+      }
+    },
+    {
+      "person_or_org": {
+        "type": "personal",
+        "given_name": "Sérgio",
+        "family_name": "Nogueira",
+        "identifiers": [
+          {
+            "scheme": "orcid",
+            "identifier": "0000-0001-8033-3937"
+          }
+        ]
+      },
+      "affiliations": [
+        {
+          "name": "Independent Researcher, Indaiatuba, SP, Brazil"
+        }
+      ],
+      "role": {
+        "id": "datacurator"
+      }
+    },
+    {
+      "person_or_org": {
+        "type": "personal",
+        "given_name": "Daniel",
+        "family_name": "Braga",
+        "identifiers": [
+          {
+            "scheme": "orcid",
+            "identifier": "0000-0002-5170-1902"
+          }
+        ]
+      },
+      "affiliations": [
+        {
+          "name": "Earth Observation and Geoinformatics Division, Instituto Nacional de Pesquisas Espaciais (INPE), São José dos Campos, SP, Brazil"
+        }
+      ],
+      "role": {
+        "id": "datacurator"
+      }
+    },
+    {
+      "person_or_org": {
+        "type": "personal",
+        "given_name": "Gilberto",
+        "family_name": "Queiroz",
+        "identifiers": [
+          {
+            "scheme": "orcid",
+            "identifier": "0000-0001-7534-0219"
+          }
+        ]
+      },
+      "affiliations": [
+        {
+          "name": "Earth Observation and Geoinformatics Division, Instituto Nacional de Pesquisas Espaciais (INPE), São José dos Campos, SP, Brazil"
+        }
+      ],
+      "role": {
+        "id": "supervisor"
+      }
+    },
+    {
+      "person_or_org": {
+        "type": "personal",
+        "given_name": "Luiz",
+        "family_name": "Aragão",
+        "identifiers": [
+          {
+            "scheme": "orcid",
+            "identifier": "0000-0002-4134-6708"
+          }
+        ]
+      },
+      "affiliations": [
+        {
+          "name": "Earth Observation and Geoinformatics Division, Instituto Nacional de Pesquisas Espaciais (INPE), São José dos Campos, SP, Brazil"
+        }
+      ],
+      "role": {
+        "id": "supervisor"
+      }
+    },
+    {
+      "person_or_org": {
+        "type": "personal",
+        "given_name": "Guilherme",
+        "family_name": "Mataveli",
+        "identifiers": [
+          {
+            "scheme": "orcid",
+            "identifier": "0000-0002-4645-0117"
+          }
+        ]
+      },
+      "affiliations": [
+        {
+          "name": "Earth Observation and Geoinformatics Division, Instituto Nacional de Pesquisas Espaciais (INPE), São José dos Campos, SP, Brazil"
+        }
+      ],
+      "role": {
+        "id": "projectmember"
+      }
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "geospatial artificial intelligence"
+    },
+    {
+      "subject": "remote sensing foundation model"
+    },
+    {
+      "subject": "self-supervised learning"
+    },
+    {
+      "subject": "forest disturbance"
+    },
+    {
+      "subject": "change detection"
+    },
+    {
+      "subject": "early warning system"
+    },
+    {
+      "subject": "deep learning"
+    },
+    {
+      "subject": "spatiotemporal analysis"
+    },
+    {
+      "subject": "transfer learning"
+    },
+    {
+      "subject": "representation learning"
+    }
+  ],
+  "description": "<p>This record contains the companion data for the paper <em>Enhancing Near-Real-Time Amazon Forest Monitoring Using GeoAI: A Case Study on Selective Logging</em>. It is organised into five categories:</p><ul><li>the pretraining corpus for the spatiotemporal masked-autoencoder foundation model;</li><li>the labelled dataset the downstream model is trained and cross-validated on;</li><li>small reference-data files: the interpreter annotations the soft labels are derived from (<code>annotations.json</code>), the alert view dates that close each monitoring period (its <code>end_period</code>), and the downstream model's cached out-of-fold scores;</li><li>the foundation-model checkpoint; and</li><li>the downstream model's checkpoints (20 leave-one-out cross-validation folds).</li></ul><p>Step-by-step reproduction instructions, including how to download and verify this record programmatically, are provided in the paper's GitHub repository, not in this description: <a href='https://github.com/EvandroCT/mdpi-nrt-forest-monitoring'>https://github.com/EvandroCT/mdpi-nrt-forest-monitoring</a>.</p><p><strong>CRediT author statement</strong> (verbatim, as published in the paper): Conceptualization, E.T.; methodology, E.T.; software, E.T.; validation, E.T.; formal analysis, E.T.; investigation, E.T.; data curation, E.T., S.N. and D.B.; writing—original draft preparation, E.T.; writing—review and editing, E.T., G.M., S.N., D.B., G.Q. and L.A.; visualization, E.T.; supervision, G.Q. and L.A. All authors have read and agreed to the published version of the manuscript. (E.T. = Evandro Taquary; G.M. = Guilherme Mataveli; S.N. = Sérgio Nogueira; D.B. = Daniel Braga; G.Q. = Gilberto Queiroz; L.A. = Luiz Aragão.)</p><p><strong>Attribution notices.</strong> Contains modified Copernicus Sentinel data [2024–2026] (applies to the HLS S30 content in this record, which is derived from Sentinel-2). DETER alert data (INPE — Instituto Nacional de Pesquisas Espaciais, distributed via the TerraBrasilis platform) are licensed under CC BY-SA 4.0 and underlie the disturbance-site selection and labels used throughout this record; consistent with the ShareAlike clause, this record is itself distributed under CC BY-SA 4.0.</p><p>Zarr stores in this record are named by their originating DETER alert identifier (FID), which is unrelated to the manuscript's MU<sub>1</sub>–MU<sub>20</sub> numbering of the 20 cross-validated monitoring units used in the paper's own text and tables.</p>",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/EvandroCT/mdpi-nrt-forest-monitoring",
+      "scheme": "url",
+      "relation_type": {
+        "id": "issupplementto"
+      },
+      "resource_type": {
+        "id": "software"
+      }
+    },
+    {
+      "identifier": "10.5067/HLS/HLSL30.002",
+      "scheme": "doi",
+      "relation_type": {
+        "id": "isderivedfrom"
+      },
+      "resource_type": {
+        "id": "dataset"
+      }
+    },
+    {
+      "identifier": "10.5067/HLS/HLSS30.002",
+      "scheme": "doi",
+      "relation_type": {
+        "id": "isderivedfrom"
+      },
+      "resource_type": {
+        "id": "dataset"
+      }
+    },
+    {
+      "identifier": "https://terrabrasilis.dpi.inpe.br/downloads/",
+      "scheme": "url",
+      "relation_type": {
+        "id": "isderivedfrom"
+      },
+      "resource_type": {
+        "id": "dataset"
+      }
+    }
+  ],
+  "community": "treeslab"
+}

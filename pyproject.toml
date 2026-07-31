@@ -1,0 +1,39 @@
+[project]
+name = "mdpi-nrt-forest-monitoring"
+version = "0.1.0"
+description = "Reproducibility pipeline: HLS acquisition, GeoZarr cubes, ST-MAE foundation-model pretraining, downstream regressor, and detection filters for near-real-time selective-logging monitoring."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "AGPL-3.0-or-later" }
+dependencies = [
+    "earthaccess",
+    "geopandas",
+    "xarray",
+    "zarr",
+    "rioxarray",
+    "dask",
+    "numpy",
+    "pandas",
+    "geozarr-toolkit",
+    "torch==2.13.0",
+    "torchvision==0.28.0",
+    "lightning",
+    "matplotlib",
+    "tifffile",
+    "rasterio",
+    "pyproj",
+    "shapely",
+    "tensorboard",
+    "pyyaml",
+    "psutil",
+    "requests",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cu130", marker = "sys_platform == 'win32'" }]
+torchvision = [{ index = "pytorch-cu130", marker = "sys_platform == 'win32'" }]

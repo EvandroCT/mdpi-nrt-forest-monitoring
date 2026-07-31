@@ -1,0 +1,20 @@
+# Environment
+.venv/
+__pycache__/
+*.pyc
+
+# Data itself lives in the companion Zenodo record, not in git. The four files tracked
+# here describe that record and verify a download against it.
+/data/*
+!/data/README.md
+!/data/checksums.sha256
+!/data/record_manifest.json
+!/data/zenodo_metadata.json
+
+# Logs and run outputs
+*.log
+logs/
+
+# OS/editor cruft
+.DS_Store
+.ipynb_checkpoints/

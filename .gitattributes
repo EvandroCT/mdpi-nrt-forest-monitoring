@@ -1,0 +1,5 @@
+# Normalize line endings so a Windows clone (with core.autocrlf=true) doesn't rewrite
+# tracked text files and produce spurious diffs / break scripts that assume LF.
+* text=auto
+*.py text eol=lf
+*.csv text eol=lf

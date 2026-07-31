@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "categories": {
+    "pretraining-corpus": {
+      "archives": [
+        "pretraining-corpus-part001-of-009.zip",
+        "pretraining-corpus-part002-of-009.zip",
+        "pretraining-corpus-part003-of-009.zip",
+        "pretraining-corpus-part004-of-009.zip",
+        "pretraining-corpus-part005-of-009.zip",
+        "pretraining-corpus-part006-of-009.zip",
+        "pretraining-corpus-part007-of-009.zip",
+        "pretraining-corpus-part008-of-009.zip",
+        "pretraining-corpus-part009-of-009.zip"
+      ]
+    },
+    "labelled-dataset": {
+      "archives": [
+        "labelled-dataset.zip"
+      ]
+    },
+    "reference-data": {
+      "archives": [
+        "reference-data.zip"
+      ]
+    },
+    "fm-checkpoint": {
+      "archives": [
+        "fm-checkpoint.zip"
+      ]
+    },
+    "regressor-checkpoints": {
+      "archives": [
+        "regressor-checkpoints.zip"
+      ]
+    }
+  },
+  "files": {
+    "fm-checkpoint.zip": {
+      "sha256": "85ac83e0fc7336e5c3a003c45f739c3bed19886005a0b47ca48faa46785da679",
+      "size_bytes": 8162275,
+      "category": "fm-checkpoint"
+    },
+    "labelled-dataset.zip": {
+      "sha256": "18d23b5a5215709ba96cb59375fb227701e4f61d28a29389b644f90d44f04b2c",
+      "size_bytes": 1599188765,
+      "category": "labelled-dataset"
+    },
+    "pretraining-corpus-part001-of-009.zip": {
+      "sha256": "aa3388a4d947cf2a9336f9b23ddea994b25c8e8c913e292818c03837d3cab25b",
+      "size_bytes": 2682545955,
+      "category": "pretraining-corpus"
+    },
+    "pretraining-corpus-part002-of-009.zip": {
+      "sha256": "1470cb768d8670bf1bcd4bcf519a8ca8c9583f169dc4467b492d3f3e8458e29f",
+      "size_bytes": 2682776420,
+      "category": "pretraining-corpus"
+    },
+    "pretraining-corpus-part003-of-009.zip": {
+      "sha256": "18b18993e8511acf15e460116779126c1e92fe7b4722e5387547aab9cc86f102",
+      "size_bytes": 2683319260,
+      "category": "pretraining-corpus"
+    },
+    "pretraining-corpus-part004-of-009.zip": {
+      "sha256": "9b6ae957e08981b4f9598013a4b3b4b51765aea353fd1eafe49a8b6b297853a2",
+      "size_bytes": 2683419300,
+      "category": "pretraining-corpus"
+    },
+    "pretraining-corpus-part005-of-009.zip": {
+      "sha256": "cebacd8fa05b4ee632436195092f434b45b75df41884d3f23b7a04972776fd68",
+      "size_bytes": 2682417555,
+      "category": "pretraining-corpus"
+    },
+    "pretraining-corpus-part006-of-009.zip": {
+      "sha256": "565ee75b21ea639d789abe9bdecd4186f8d661bcba23cc4a4ef04e090feb897c",
+      "size_bytes": 2683439369,
+      "category": "pretraining-corpus"
+    },
+    "pretraining-corpus-part007-of-009.zip": {
+      "sha256": "6835f0191942839316f6425e05fac1266fa3eb125cac16fcbc7cd43bbf5803cf",
+      "size_bytes": 2683578013,
+      "category": "pretraining-corpus"
+    },
+    "pretraining-corpus-part008-of-009.zip": {
+      "sha256": "9800f663be6c253667e63b459ef8124f0ba5a7460604859668ad429bf90f3215",
+      "size_bytes": 2682342858,
+      "category": "pretraining-corpus"
+    },
+    "pretraining-corpus-part009-of-009.zip": {
+      "sha256": "f089b42918784aa19c363c75573879af55d8e3f5044de005854c9c10cfb5505f",
+      "size_bytes": 505777407,
+      "category": "pretraining-corpus"
+    },
+    "reference-data.zip": {
+      "sha256": "c0ad6e538d28e576f20fd5b15b204555960ffc07509fc56afc8bfc1210281df4",
+      "size_bytes": 17691,
+      "category": "reference-data"
+    },
+    "regressor-checkpoints.zip": {
+      "sha256": "efb9c2ce20882a98835fcf31a556c65c9ca00ba74f5ac2a3e4fc778580c06b74",
+      "size_bytes": 100873093,
+      "category": "regressor-checkpoints"
+    }
+  }
+}
