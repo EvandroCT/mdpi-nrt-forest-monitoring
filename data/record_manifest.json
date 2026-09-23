@@ -33,6 +33,16 @@
       "archives": [
         "regressor-checkpoints.zip"
       ]
+    },
+    "interpretation-panels": {
+      "archives": [
+        "interpretation-panels.zip"
+      ]
+    },
+    "detector-evaluation": {
+      "archives": [
+        "detector-evaluation.zip"
+      ]
     }
   },
   "files": {
@@ -100,6 +110,16 @@
       "sha256": "efb9c2ce20882a98835fcf31a556c65c9ca00ba74f5ac2a3e4fc778580c06b74",
       "size_bytes": 100873093,
       "category": "regressor-checkpoints"
+    },
+    "interpretation-panels.zip": {
+      "sha256": "14289531e4fed064cbdef8777a9dda62a308adef9ca87bdfc53690eebe163a41",
+      "size_bytes": 37007174,
+      "category": "interpretation-panels"
+    },
+    "detector-evaluation.zip": {
+      "sha256": "14604f3a42ac9001e393bb96e193744f4a3e3f41c3c03f05de9b16c63e8c3fbf",
+      "size_bytes": 427543,
+      "category": "detector-evaluation"
     }
   }
 }

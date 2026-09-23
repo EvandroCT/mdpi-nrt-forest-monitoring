@@ -15,7 +15,8 @@ results. data/record_manifest.json maps archive filenames to categories; it is t
 source of truth for that mapping, so no naming convention is ever guessed.
 
 Categories: pretraining-corpus, labelled-dataset, reference-data, fm-checkpoint,
-regressor-checkpoints. Not every downstream step needs every category -- for example,
+regressor-checkpoints, interpretation-panels, detector-evaluation (the last two from version
+1.1.0 of the record on). Not every downstream step needs every category -- for example,
 `labelled-dataset,reference-data` alone is enough to run 07_detector/sweep_kernels.py:
 it consumes the already-shipped dense-prediction cache (dense_predictions.json, part of
 reference-data) and the zarr stores it re-derives features from (labelled-dataset), and
@@ -55,6 +56,7 @@ RECORD_MANIFEST_PATH = REPO_ROOT / "data" / "record_manifest.json"
 
 CATEGORY_NAMES = [
     "pretraining-corpus", "labelled-dataset", "reference-data", "fm-checkpoint", "regressor-checkpoints",
+    "interpretation-panels", "detector-evaluation",
 ]
 # The two zarr-chunk-heavy categories are stored uncompressed (their chunks are already
 # compressed), the rest are deflated -- used ONLY as a rough uncompressed-size estimate for

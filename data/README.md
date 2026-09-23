@@ -3,8 +3,8 @@
 The corpora and trained weights referenced throughout this pipeline are not tracked in this git
 repository — they are published as a companion record on Zenodo:
 
-**DOI: [10.5281/zenodo.21712167](https://doi.org/10.5281/zenodo.21712167)** — the exact version
-this repository is built against. [10.5281/zenodo.21712166](https://doi.org/10.5281/zenodo.21712166)
+**DOI: [10.5281/zenodo.22923579](https://doi.org/10.5281/zenodo.22923579)** — version 1.1.0, the
+exact version this repository is built against. [10.5281/zenodo.21712166](https://doi.org/10.5281/zenodo.21712166)
 is the concept DOI, which always resolves to the most recent version.
 
 Fetch it with `00_data/download_record.py` (see the repository README's **Data** section); the
@@ -19,6 +19,8 @@ archives unpack straight into this directory, in the layout the pipeline stages 
 | Small reference data (`reference-data/`) | ~100 KB | Annotations, view dates, cached scores |
 | Foundation-model checkpoint (`fm-checkpoint/best.pt`) | ~11 MB | The pretrained encoder used throughout |
 | Downstream model, 20 leave-one-out folds (`regressor-checkpoints/`) | ~110 MB | The single configuration reported in the paper |
+| Interpretation panels (`interpretation-panels/`), from version 1.1.0 | ~38 MiB | The visual-interpretation panels the annotators read, one per marked observation and monitoring reference, with README and manifest |
+| Detector evaluation (`detector-evaluation/`), from version 1.1.0 | ~3 MiB | The published outputs of the detector evaluation (`07_detector/`: nested leave-one-MU-out, negative test, DETER alert survey), with README |
 
 Three terms are used consistently here and in the code:
 
@@ -69,7 +71,7 @@ observations interval        [ first_observation ..... last_observation ]
   one primary datum of the four, and it is what `view_dates.json` holds.
 - **`start_period`** — `end_period` minus one calendar year.
 - **`first_observation`** — the first acquisition at or after `start_period`. Because acquisitions
-  are irregular, it lands a few days *inside* the period rather than on its edge: 3 to 6 days
+  are irregular, it lands a few days *inside* the period rather than on its edge: 1 to 8 days
   across the 20 monitoring units.
 - **`last_observation`** — the last acquisition at or before `end_period`, 0 to 6 days early
   (it coincides with the view date in only 7 of the 20 units).
@@ -86,7 +88,10 @@ Zarr stores are named by their originating DETER alert identifier (e.g.
 `10931_curr+11771_curr+....zarr` for a fused cluster of overlapping alerts) — this is the project's
 established technical identifier and is unrelated to the manuscript's MU$_1$–MU$_{20}$ numbering
 of the 20 cross-validated units, which exists purely for readability in the paper's own text and
-tables.
+tables; the paper's Table S1 and `07_detector/paper_mu_numbers.py` map one to the other. The
+identifier is the one the alert carried in the DETER export the sites were drawn from; DETER does
+not keep identifiers stable across downloads, so in a later download a site's own alert is found
+by its view date (`view_dates.json`) and location, not by its identifier.
 
 ## License and attribution
 

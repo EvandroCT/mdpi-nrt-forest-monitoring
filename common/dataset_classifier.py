@@ -97,7 +97,7 @@ def load_annotations(
       * start_period is end_period minus one calendar year.
       * first_observation is the first acquisition at or after start_period. Acquisitions
         are irregular, so it lands a few days inside the period rather than on its edge
-        (3-6 days across the 20 monitoring units).
+        (1-8 days across the 20 monitoring units).
       * last_observation is the last acquisition at or before end_period (0-6 days early).
 
     Only end_period and first_observation are stored: the other two are derivable, and

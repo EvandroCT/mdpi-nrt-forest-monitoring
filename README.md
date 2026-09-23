@@ -4,7 +4,7 @@ Code to reproduce the trainings and inferences reported in:
 
 > Taquary, E., Mataveli, G., Nogueira, S., Braga, D., Queiroz, G., Aragão, L. *Enhancing
 > Near-Real-Time Amazon Forest Monitoring Using GeoAI: A Case Study on Selective Logging.*
-> Submitted to *Remote Sensing* (MDPI).
+> Accepted for publication in *Remote Sensing* (MDPI).
 
 ## Scope
 
@@ -25,9 +25,10 @@ the corpora from source**, but it is not part of the path above.
 ## Data
 
 The corpora and trained weights (~22 GiB) are not stored in this repository — they are published
-as a companion dataset on Zenodo: **[10.5281/zenodo.21712167](https://doi.org/10.5281/zenodo.21712167)**
-(this exact version; [10.5281/zenodo.21712166](https://doi.org/10.5281/zenodo.21712166) always
-resolves to the latest one). See `data/README.md` for exactly what's in that record and how it
+as a companion dataset on Zenodo: **[10.5281/zenodo.22923579](https://doi.org/10.5281/zenodo.22923579)**
+(version 1.1.0, the one this repository is built against;
+[10.5281/zenodo.21712166](https://doi.org/10.5281/zenodo.21712166) always resolves to the latest
+one). See `data/README.md` for exactly what's in that record and how it
 maps to the directories below.
 
 To fetch it, into the layout every stage below expects:
@@ -47,7 +48,10 @@ present and verified, so an interrupted download resumes rather than starting ov
 
 The record is the entry point: fetch it and every stage below has its inputs. Fetching everything
 lets you start at pretraining; fetching `labelled-dataset,reference-data` plus the published
-checkpoints lets you skip straight to the downstream model and the detection filters.
+checkpoints lets you skip straight to the downstream model and the detection filters. Two
+categories are not inputs to any stage: `interpretation-panels`, the panels the interpreters read
+when placing the reference dates, and `detector-evaluation`, the published outputs of the detector
+evaluation (stage 4), to compare a rerun against.
 
 The two upstream data sources are public but not re-hosted here in raw form:
 
