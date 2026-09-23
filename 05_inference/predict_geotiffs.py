@@ -57,6 +57,7 @@ from make_indices_vrts import make_combined_vrt_for_tif  # noqa: E402
 
 _DEFAULT_MASK_BITS = 0b00001111             # cirrus | cloud | adj_cloud | shadow
 _HLSS30_CODE = 1                            # platform code used elsewhere
+_NO_AERO = False                            # set by load_model() from the checkpoint's own args
 
 
 def enumerate_prediction_tiles(
@@ -150,6 +151,10 @@ def load_model(ckpt_path: Path, device: str) -> tuple[TimeFirstAutoencoder, dict
     # state_dict was saved unwrapped (see train.py's save block).
     model.load_state_dict(ck["model"], strict=True)
     model.eval().to(device)
+    global _NO_AERO
+    _NO_AERO = bool(args.get("no_aero_channel", False)) or int(args.get("in_channels", 8)) == 7
+    print(f"[setup] aerosol channel = {'excluded' if _NO_AERO else 'included'} "
+          f"(checkpoint in_channels={int(args.get('in_channels', 8))})", flush=True)
     return model, args
 
 
@@ -212,10 +217,14 @@ def build_inference_sample(
     # Invalid-mask channel (computed BEFORE NaN→0; stays finite).
     is_invalid = np.isnan(in_refl[:, 0]).astype(np.float32)
 
-    in_arr = np.concatenate(
-        [in_refl, aero[:, None, :, :], is_invalid[:, None, :, :]],
-        axis=1,
-    ).astype(np.float32)
+    # Checkpoints trained with --no-aero-channel (in_channels=7: 6 reflectance +
+    # invalid-mask), the published one included, take no aerosol plane -- mirrors
+    # HLSGeoZarrDataset.__getitem__'s include_aero_channel toggle (dataset.py).
+    parts = [in_refl]
+    if not _NO_AERO:
+        parts.append(aero[:, None, :, :])
+    parts.append(is_invalid[:, None, :, :])
+    in_arr = np.concatenate(parts, axis=1).astype(np.float32)
 
     # Pad to crop_size if ROI is smaller than the crop.
     if y_take < s or x_take < s:
