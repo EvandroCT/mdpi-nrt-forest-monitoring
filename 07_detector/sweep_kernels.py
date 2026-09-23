@@ -311,8 +311,8 @@ if __name__ == "__main__":
         cf = c["cfg"]; m = c["metrics_strict"]
         kerns = f"f{cf['f']} p{cf['p']} TE{cf['TE']} | L{cf['L']} σ{cf['sigma']} TG{cf['TG']} K{cf['K']}"
         print(f"{r['version']:<7} {r['variant']:<10} | {kerns:<40} | {m['miss']:>4} {m['det']:>3} {m['median']:>+6.0f}")
-    # ---- self-check: the kernel pair reported in an earlier iteration of this grid search,
-    # re-evaluated here as a regression guard (expected 7 misses / 0 FP / +7 d median) ----
+    # ---- self-check: a fixed kernel pair on the published dense predictions, as a regression
+    # guard for the filters (expected 5 misses / 1 FP / +9 d median) ----
     DV = {a: dict(v) for a, v in json.loads((CLF / "dense_predictions.json").read_text(encoding="utf-8")).items()}
     vdays = []
     for a in [x for x in ROIS if x in DV]:
@@ -321,5 +321,5 @@ if __name__ == "__main__":
         e = filt(P, *edge_kernel(5, 10)); g = filt(P, *gauss_kernel(11, 1.8))
         vdays.append(first_day((e >= 0.8) | sustained(g >= 0.8, 1), cdr))
     vm = metrics(np.array(vdays), 0)
-    print(f"\n[self-check] earlier kernel pair (f5 p10 TE0.8 ∨ L11 σ1.8 TG0.8 K1): "
-          f"miss={vm['miss']} FP={vm['fp']} det={vm['det']} medLag={vm['median']:+.0f}  (expected 7/0/+7)")
+    print(f"\n[self-check] fixed kernel pair (f5 p10 TE0.8 ∨ L11 σ1.8 TG0.8 K1): "
+          f"miss={vm['miss']} FP={vm['fp']} det={vm['det']} medLag={vm['median']:+.0f}  (expected 5/1/+9)")

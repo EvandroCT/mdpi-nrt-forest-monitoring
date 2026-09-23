@@ -14,6 +14,9 @@ repository reproduces, end to end:
 1. Pretraining of the spatiotemporal masked-autoencoder (ST-MAE) foundation model.
 2. Training and leave-one-out cross-validation of the downstream model (a soft-label regressor).
 3. The temporal detection-filter grid search (the change detector) and its inference output.
+4. The evaluation of the detector: its nested leave-one-MU-out evaluation, the negative test on
+   certified logging-free observations, and the survey of DETER alerts inside each analysed
+   period (the paper's Tables 3 and 5 and Supplementary Tables S2 and S3).
 
 The code that built those datacubes in the first place — the DETER-derived ROI set, the
 eligibility-gated HLS acquisition, the GeoZarr assembly — is published too, under **Rebuilding
@@ -162,6 +165,45 @@ monitoring units are still confirmed — not a hand-tuned choice. Reproducing it
 confirm all 20 of 20 held-out units on time, 0 false positives, median confirmation lag **+15
 days**.
 
+### 4. Detector evaluation
+
+```bash
+uv run python 07_detector/nested_sweep.py                    # nested leave-one-MU-out evaluation of the grid search
+uv run python 07_detector/make_nested_tables.py              # Table 5 and Table S3
+uv run python 07_detector/negative_test/select_targets.py    # the certified logging-free targets no fold trained on
+uv run python 07_detector/negative_test/score_targets.py     # their scores under the 20 fold models (GPU)
+uv run python 07_detector/negative_test/evaluate_targets.py  # Table 3
+uv run python 07_detector/deter_alerts/deter_survey.py /path/to/deter-amz-deter-public.shp  # DETER alerts at every site
+uv run python 07_detector/deter_alerts/make_deter_tables.py  # Table S2 and the alert counts quoted in the text
+```
+
+The seven detector parameters are selected on the same 20 units the detector is evaluated on.
+`nested_sweep.py` repeats the grid search on 19 units at a time and applies each winner, unchanged,
+to the held-out unit: 18 of 20 are confirmed on time, with one early false alarm and one miss,
+median confirmation lag unchanged at +15 days; 18 of the 20 folds re-select the reference
+configuration. It runs on CPU, in about 8 minutes with 21 worker processes.
+
+The negative test takes the logging-free candidates of `annotations.json` that the seed-0 negative
+draw never reached: 51 targets on 41 sites, none of them a training target of any fold. Under the
+reference rule no target is alerted by a majority of the 20 fold models, and 6 of the 1,020
+target–model readings alert. `score_targets.py` needs the `regressor-checkpoints` category and a
+CUDA GPU (about an hour on one H100); the other steps run on CPU in seconds to minutes.
+
+`deter_survey.py` reads the public DETER Amazônia shapefile, unzipped from
+[TerraBrasilis](https://terrabrasilis.dpi.inpe.br/file-delivery/download/deter-amz/shape). That file
+grows as alerts are published; the survey in the record was built from the download of 15 September
+2026. To reproduce Table S2 from the record's survey and targets, without the shapefile:
+
+```bash
+SURVEY=data/detector-evaluation/deter_alerts/deter_survey.csv \
+TARGETS=data/detector-evaluation/negative_test/targets.csv \
+    uv run python 07_detector/deter_alerts/make_deter_tables.py
+```
+
+Every step writes under `data/runs/` (`nested_sweep/`, `negative_test/`, `deter_alerts/`); the
+`detector-evaluation` category holds the published outputs under the same names, in
+`data/detector-evaluation/`.
+
 ## Rebuilding the corpora from source
 
 **Not part of the reproduction path above.** The Zenodo
@@ -251,7 +293,8 @@ common/          Shared eligibility-filter logic (imported by 02_download and 04
 04_pretraining/  ST-MAE foundation-model pretraining.
 05_inference/    Inference with the pretrained/trained models.
 06_regressor/    Downstream soft-label regressor + leave-one-MU-out cross-validation.
-07_detector/     Temporal detection-filter grid search and reference-detector inference.
+07_detector/     Temporal detection-filter grid search, reference-detector inference and the
+                 detector evaluation (nested LOMO, negative test, DETER alert survey).
 data/            Pointer to the companion Zenodo record — not tracked in git.
 ```
 
