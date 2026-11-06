@@ -17,7 +17,7 @@ Detector arms (padding 0-left / mirror-right for both):
 
 Metrics vs t0 (= first in-window seed): miss (never fires) / early-FP (lag < -tau) /
 median lag (lag >= -tau). tau=0 strict (primary) + sensitivity tau in {7,15,30}.
-Ranking: min FP -> min median lag -> min miss.
+Ranking (lexicographic, on the confirmation lags): min FP -> min miss -> min median lag -> min mean lag.
 
 What is searched here is the DETECTOR -- the edge/persistence kernel pair -- over scores the
 downstream model produced. DATASETS below is the single reported configuration (the "raw" input variant). Runs the full combo cross-product for whatever DATASETS contains.
